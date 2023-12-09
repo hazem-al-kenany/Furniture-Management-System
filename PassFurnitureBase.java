@@ -55,4 +55,4 @@ public class PassFurnitureBase
       public String toString() {
        //which returns a String representation of an object of that class including , furniture details
 }
-
+}
