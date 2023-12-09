@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=PassFurnitureBase
+comment0.text=\n\ FurnitureBase\ represents\ an\ individual\ furniture\ item\ within\ the\ FurnitureStore\ system.\n\ Each\ FurnitureBase\ has\ a\ unique\ ID,\ a\ description\ detailing\ its\ characteristics,\ \n\ a\ type\ or\ category\ (like\ chair,\ table,\ bed),\ materials\ used,\ dimensions,\ \n\ and\ a\ price.\ The\ store's\ inventory\ is\ essentially\ a\ collection\ of\ FurnitureBase\ objects.\n\ The\ system\ relies\ on\ the\ comprehensive\ data\ within\ each\ FurnitureBase\ \n\ to\ manage\ stock\ levels,\ make\ sales\ transactions,\ and\ provide\ detailed\ \n\ product\ information\ to\ both\ staff\ and\ customers.\ Properly\ maintained\ \n\ FurnitureBase\ records\ ensure\ that\ the\ store\ can\ track\ product\ availability,\ \n\ popularity,\ and\ sales\ trends\ over\ time.\n
+comment1.params=
+comment1.target=java.lang.String\ getID()
+numComments=2
