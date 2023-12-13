@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * A Purchaser is a vital entity in the FurnitureStore system. Each Purchaser has an ID, 
@@ -10,5 +12,58 @@ import java.util.*;
  * facilitating personalized services, promotions, and streamlined communication.
  */
 public class Purchaser {
-    // class members...
+    // Attributes
+    public String id;
+    public String name;
+    public String furnitureType;
+    public String contactDetails;
+    public Date purchaseDate;
+    public List<String> purchaseHistory;
+    
+    //constructor with id, name, and furnitureType
+        public Purchaser(String id, String name, String furnitureType) {
+        this.id = id;
+        this.name = name;
+        this.furnitureType = furnitureType;
+        this.purchaseDate = new Date(); // Initialize with current date
+        this.purchaseHistory = new ArrayList<>();
+    }
+    // Overloaded constructor initializing all attributes
+        public Purchaser(String id, String name, String furnitureType, String contactDetails, Date purchaseDate) {
+        this.id = id;
+        this.name = name;
+        this.furnitureType = furnitureType;
+        this.contactDetails = contactDetails;
+        this.purchaseDate = purchaseDate;
+        this.purchaseHistory = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+    
+        public String getID() {
+        return id;
+    }
+
+    public String getContactDetails() {
+        return contactDetails;
+    }
+
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
+    }
+    
+        public void addToPurchaseHistory(String item) {
+        this.purchaseHistory.add(item);
+    }
+    
+        public List<String> getPurchaseHistory() {
+        return purchaseHistory;
+    }
+
+    //might be restricted from making more purchases or might get exclusive access to buy certain premium items.
+        public boolean isPurchaseValid(int THRESHOLD_VALUE) {
+        return purchaseHistory.size() < THRESHOLD_VALUE;
+    }
 }

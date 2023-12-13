@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Purchaser
+comment0.text=\n\ A\ Purchaser\ is\ a\ vital\ entity\ in\ the\ FurnitureStore\ system.\ Each\ Purchaser\ has\ an\ ID,\ \n\ a\ name,\ contact\ information\ including\ phone\ number,\ email,\ and\ a\ physical\ address.\ \n\ Purchasers\ are\ the\ customers\ or\ clients\ who\ make\ orders\ or\ procure\ furniture\ items\ \n\ from\ the\ store.\ The\ system\ keeps\ track\ of\ each\ Purchaser\ to\ maintain\ order\ histories,\ \n\ shipping\ details,\ and\ other\ transaction-related\ records.\ Detailed\ information\ about\ \n\ every\ Purchaser\ is\ essential\ for\ the\ store's\ customer\ relationship\ management,\ \n\ facilitating\ personalized\ services,\ promotions,\ and\ streamlined\ communication.\n
+comment1.params=id\ name\ furnitureType
+comment1.target=Purchaser(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=id\ name\ furnitureType\ contactDetails\ purchaseDate
+comment2.target=Purchaser(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.Date)
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment4.params=
+comment4.target=java.lang.String\ getID()
+comment5.params=
+comment5.target=java.lang.String\ getContactDetails()
+comment6.params=contactDetails
+comment6.target=void\ setContactDetails(java.lang.String)
+comment7.params=item
+comment7.target=void\ addToPurchaseHistory(java.lang.String)
+comment8.params=
+comment8.target=java.util.List\ getPurchaseHistory()
+comment9.params=THRESHOLD_VALUE
+comment9.target=boolean\ isPurchaseValid(int)
+numComments=10

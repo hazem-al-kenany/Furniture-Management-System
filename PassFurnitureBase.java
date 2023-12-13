@@ -18,9 +18,20 @@ public class PassFurnitureBase
    public int itemCount;
    public double price;
    public String furnitureHistory;
-   //constructor
- 
-   
+
+   // Default Constructor
+    public PassFurnitureBase() {
+        // Default initialization or actions if needed
+    }
+    
+    // Constructor with parameters for furnitureCategory and itemCount
+    public PassFurnitureBase(String id, String furnitureCategory, int itemCount, double price, String furnitureHistory) {
+        this.id = id;
+        this.furnitureCategory = furnitureCategory;
+        this.itemCount = itemCount;
+        this.price = price;
+        this.furnitureHistory = furnitureHistory;
+    }
    
    //methods
    public String getID() {
@@ -28,31 +39,37 @@ public class PassFurnitureBase
    }
   
    public float calculateDiscount() {
-       return discount;
+       return 0;
    }
    
    public String getFurnitureCategory() {
        return furnitureCategory;
    }
    
-   public String setFurnitureCategory(String category) {
+   public void setFurnitureCategory(String category) {
        this.furnitureCategory = category;
-       return furnitureCategory;
    }
    
    public String displayDetails() {
        System.out.println("procurement date");
+       return "temp";
    }
    
    public String associatePurchaser(Purchaser buyer) {
        //binds a buyer to a specific furniture unit
+       return "temp";
    }
    
    public String showAllFurnitureDetails() {
        System.out.println("Presents a list of all furniture kinds along with their comprehensive details");
-   }
+       return "temp";
+    }
    
-      public String toString() {
-       //which returns a String representation of an object of that class including , furniture details
-}
+   public String toString() {
+          return "PassFurnitureBase{" + "id=" + id + "|" + 
+              ", furnitureCategory=" + furnitureCategory + "|" +
+              ", itemCount=" + itemCount + "|" + 
+              "price=" + price + "|" + 
+              ", furnitureHistory=" + furnitureHistory + "}";
+    }
 }
