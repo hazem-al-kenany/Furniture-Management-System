@@ -1,5 +1,4 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 /**
  * FurnitureCategory denotes a specific category or type within the FurnitureStore system.
  * Each category is distinct, such as chairs, tables, beds, or sofas. Every FurnitureCategory 
@@ -28,6 +27,7 @@ public class FurnitureCategory {
         this.isOutdoor = isOutdoor;
         this.recentPurchaser = recentPurchaser;
         this.materials = new ArrayList<>();
+        
     }
     
         public String getID() {

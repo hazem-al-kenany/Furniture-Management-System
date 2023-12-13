@@ -4,13 +4,12 @@
  * and furniture categories within a furniture management system.
  */
 public interface FURNITUREInterface {
-
     /**
      * Adds a new piece of furniture to the system.
      *
      * @param furniture The FurnitureBase object to be added.
      */
-    void addFurniture(FurnitureBase furniture);
+    void addFurniture(PassFurnitureBase furniture);
 
     /**
      * Adds a new purchaser to the system.
@@ -32,7 +31,7 @@ public interface FURNITUREInterface {
      * @param id The unique identifier of the desired furniture.
      * @return FurnitureBase object with the matching ID or null if not found.
      */
-    FurnitureBase getFurnitureByID(int id);
+    PassFurnitureBase getFurnitureByID(int id);
 
     /**
      * Retrieves a purchaser by its unique ID.

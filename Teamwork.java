@@ -1,6 +1,3 @@
-  
-
-
 /**
  * Details of your pair
  * 
@@ -22,9 +19,9 @@ public class Teamwork
         details[0] = "surname of programmer1";
         details[1] = "first name of programmer1";
         details[2] = "SRN of programmer1";
-        details[3] = "surname of programmer2";
-        details[4] = "first name of programmer2";
-        details[5] = "SRN of programmer2";
+        details[3] = "Elknany";
+        details[4] = "Hazem";
+        details[5] = "202100186";
     }
     
     public String[] getTeamDetails()
