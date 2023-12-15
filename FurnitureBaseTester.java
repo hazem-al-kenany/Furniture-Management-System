@@ -10,8 +10,8 @@ public class FurnitureBaseTester
     public static void main(String[] args)
     {
         // Creating FurnitureBase objects using different constructors
-        PassFurnitureBase chair = new PassFurnitureBase("CHAIR001", "Chair", 10, 49.99, "Wooden chair");
-        PassFurnitureBase table = new PassFurnitureBase("TABLE001", "Table", 5, 149.99, "Oak wood table");
+        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 10, 49.99, "Wooden chair");
+        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 5, 149.99, "Oak wood table");
 
         // Displaying initial details
         System.out.println("Initial Details:");

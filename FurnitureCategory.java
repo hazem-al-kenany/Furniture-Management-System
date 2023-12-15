@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class FurnitureCategory {
     //Attributes
-    public String id;
+    public int id;
     public String typeName;
     public double maximumLoad;
     public boolean isOutdoor;
@@ -24,7 +24,7 @@ public class FurnitureCategory {
     public int quantity;
     
     //A constructor that takes arguments to set the initial values for the attributes.
-        public FurnitureCategory(String id, String typeName, double maximumLoad, boolean isOutdoor, Purchaser recentPurchaser, String orderId, int quantity) {
+        public FurnitureCategory(int id, String typeName, double maximumLoad, boolean isOutdoor, Purchaser recentPurchaser, String orderId, int quantity) {
         this.id = id;
         this.typeName = typeName;
         this.maximumLoad = maximumLoad;
@@ -36,7 +36,7 @@ public class FurnitureCategory {
         this.quantity = quantity;
     }
     
-        public String getID() {
+        public int getID() {
         return id;
     }
 

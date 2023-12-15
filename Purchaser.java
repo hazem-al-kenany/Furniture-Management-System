@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class Purchaser {
     // Attributes
-    public String id;
+    public int id;
     public String name;
     public String furnitureType;
     public String contactDetails;
@@ -18,7 +18,7 @@ public class Purchaser {
     public List<String> purchaseHistory;
     
     //constructor with id, name, and furnitureType
-        public Purchaser(String id, String name, String furnitureType) {
+        public Purchaser(int id, String name, String furnitureType) {
         this.id = id;
         this.name = name;
         this.furnitureType = furnitureType;
@@ -26,7 +26,7 @@ public class Purchaser {
         this.purchaseHistory = new ArrayList<>();
     }
     // Overloaded constructor initializing all attributes
-        public Purchaser(String id, String name, String furnitureType, String contactDetails, Date purchaseDate) {
+        public Purchaser(int id, String name, String furnitureType, String contactDetails, Date purchaseDate) {
         this.id = id;
         this.name = name;
         this.furnitureType = furnitureType;
@@ -39,7 +39,7 @@ public class Purchaser {
         return name;
     }
     
-        public String getID() {
+        public int getID() {
         return id;
     }
 

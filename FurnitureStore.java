@@ -28,7 +28,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
 
     private void linkOrdersToFurniture() {
         for (FurnitureCategory order : allCustomerOrders) {
-            PassFurnitureBase furniturePiece = getFurnitureByID(Integer.parseInt(order.getID()));
+            PassFurnitureBase furniturePiece = getFurnitureByID(order.getID());
             if (furniturePiece != null) {
                 order.setFurnitureItem(furniturePiece);
             }
@@ -38,23 +38,23 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     // Implementation of the methods from FURNITURE interface
     @Override
     public void addFurniture(PassFurnitureBase furniture) {
-       allFurniturePieces.add(furniture);
+       allFurniturePieces.add(furniture.getID() -1, furniture);
     }
 
     @Override
     public void addPurchaser(Purchaser purchaser) {
-        allSuppliers.add(purchaser);
+        allSuppliers.add(purchaser.getID() -1, purchaser);
     }
 
     @Override
     public void addCategory(FurnitureCategory category) {
-        allCustomerOrders.add(category);
+        allCustomerOrders.add(category.getID() -1, category);
     }
 
     @Override
     public PassFurnitureBase getFurnitureByID(int id) {
         if (id>0 && id<allFurniturePieces.size()) {
-            return allFurniturePieces.get(id);
+            return allFurniturePieces.get(id-1); //-1 because of index in array list
         }
         return null; // Not found
     }
@@ -62,7 +62,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     @Override
     public Purchaser getPurchaserByID(int id) {
                 if (id>0 && id<allSuppliers.size()) {
-            return allSuppliers.get(id);
+            return allSuppliers.get(id-1); //-1 because of index in array list
         }
         return null; // Not found
     }
@@ -70,7 +70,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     @Override
     public FurnitureCategory getCategoryByID(int id) {
                 if (id>0 && id<allCustomerOrders.size()) {
-            return allCustomerOrders.get(id);
+            return allCustomerOrders.get(id-1); //-1 because of index in array list
         }
         return null; // Not found
     }
@@ -81,26 +81,26 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         // This may involve instantiating new FurnitureBase and Purchaser objects and adding them to the respective lists.
         
         //Creating furniture objects
-        PassFurnitureBase chair = new PassFurnitureBase("1", "Chair", 1, 100.0, "Wooden Chair");
-        PassFurnitureBase table = new PassFurnitureBase("2", "Table", 1, 300.0, "Dining Table");
-        PassFurnitureBase sofa = new PassFurnitureBase("3", "Sofa", 1, 800, "Leather Sofa");
-        PassFurnitureBase bed = new PassFurnitureBase("4", "Bed", 1, 1200, "King Sized Bed");
-        PassFurnitureBase wardrobe = new PassFurnitureBase("5", "Wardrobe", 1, 900, "Wooden Wardrobe");
+        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 1, 100.0, "Wooden Chair");
+        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 1, 300.0, "Dining Table");
+        PassFurnitureBase sofa = new PassFurnitureBase(3, "Sofa", 1, 800, "Leather Sofa");
+        PassFurnitureBase bed = new PassFurnitureBase(4, "Bed", 1, 1200, "King Sized Bed");
+        PassFurnitureBase wardrobe = new PassFurnitureBase(5, "Wardrobe", 1, 900, "Wooden Wardrobe");
         
         // Adding furniture pieces to the collection based on their IDs
-        allFurniturePieces.add(Integer.parseInt(chair.getID()) - 1, chair);
-        allFurniturePieces.add(Integer.parseInt(table.getID()) - 1, table);
-        allFurniturePieces.add(Integer.parseInt(sofa.getID()) - 1, sofa);
-        allFurniturePieces.add(Integer.parseInt(bed.getID()) - 1, bed);
-        allFurniturePieces.add(Integer.parseInt(wardrobe.getID()) - 1, wardrobe);
+        allFurniturePieces.add(chair.getID() - 1, chair);
+        allFurniturePieces.add(table.getID() - 1, table);
+        allFurniturePieces.add(sofa.getID() - 1, sofa);
+        allFurniturePieces.add(bed.getID() - 1, bed);
+        allFurniturePieces.add(wardrobe.getID() - 1, wardrobe);
         
         //Creating Suppliers/Purchasers
         Date currentDate = new Date();
-        Purchaser ikea = new Purchaser("1", "IKEA", "n/a", "ikea@example.com", currentDate);
-        Purchaser walmart = new Purchaser("2", "Walmart", "n/a", "walmart@example.com", currentDate);
-        Purchaser westElm = new Purchaser("3", "West Elm", "n/a", "westelm@example.com", currentDate);
-        Purchaser target = new Purchaser("4", "Target", "n/a", "target@example.com", currentDate);
-        Purchaser homeGoods = new Purchaser("5", "HomeGoods", "n/a", "homegoods@example.com", currentDate);
+        Purchaser ikea = new Purchaser(1, "IKEA", "n/a", "ikea@example.com", currentDate);
+        Purchaser walmart = new Purchaser(2, "Walmart", "n/a", "walmart@example.com", currentDate);
+        Purchaser westElm = new Purchaser(3, "West Elm", "n/a", "westelm@example.com", currentDate);
+        Purchaser target = new Purchaser(4, "Target", "n/a", "target@example.com", currentDate);
+        Purchaser homeGoods = new Purchaser(5, "HomeGoods", "n/a", "homegoods@example.com", currentDate);
         
         //Adding suppliers to the collection
         allSuppliers.add(ikea);
@@ -129,11 +129,11 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         PassFurnitureBase wardrobe = allFurniturePieces.get(4);
     
         //Creating FurnitureCategory objects
-        FurnitureCategory chairCategory = new FurnitureCategory("1", "Chair", 0.0, true, ikea, "101", 5);
-        FurnitureCategory tableCategory = new FurnitureCategory("2", "Table", 0.0, true, walmart, "102", 3);
-        FurnitureCategory sofaCategory = new FurnitureCategory("3", "Sofa", 0.0, false, westElm, "103", 2);
-        FurnitureCategory bedCategory = new FurnitureCategory("4", "Bed", 0.0, false, target, "104", 1);
-        FurnitureCategory wardrobeCategory = new FurnitureCategory("5", "Wardrobe", 0.0, false, homeGoods, "105", 4);
+        FurnitureCategory chairCategory = new FurnitureCategory(1, "Chair", 0.0, true, ikea, "101", 5);
+        FurnitureCategory tableCategory = new FurnitureCategory(2, "Table", 0.0, true, walmart, "102", 3);
+        FurnitureCategory sofaCategory = new FurnitureCategory(3, "Sofa", 0.0, false, westElm, "103", 2);
+        FurnitureCategory bedCategory = new FurnitureCategory(4, "Bed", 0.0, false, target, "104", 1);
+        FurnitureCategory wardrobeCategory = new FurnitureCategory(5, "Wardrobe", 0.0, false, homeGoods, "105", 4);
     
         //Adding orders to the list
         allCustomerOrders.add(chairCategory);

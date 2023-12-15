@@ -13,7 +13,7 @@
 public class PassFurnitureBase 
 {
    //fields
-   public String id;
+   public int id;
    public String furnitureCategory;
    public int itemCount;
    public double price;
@@ -25,7 +25,7 @@ public class PassFurnitureBase
     }
     
     // Constructor with parameters for furnitureCategory and itemCount
-    public PassFurnitureBase(String id, String furnitureCategory, int itemCount, double price, String furnitureHistory) {
+    public PassFurnitureBase(int id, String furnitureCategory, int itemCount, double price, String furnitureHistory) {
         this.id = id;
         this.furnitureCategory = furnitureCategory;
         this.itemCount = itemCount;
@@ -34,7 +34,7 @@ public class PassFurnitureBase
     }
    
    //methods
-   public String getID() {
+   public int getID() {
        return id;
    }
   
@@ -66,10 +66,10 @@ public class PassFurnitureBase
     }
    
    public String toString() {
-          return "PassFurnitureBase{" + "id=" + id + "|" + 
-              ", furnitureCategory=" + furnitureCategory + "|" +
-              ", itemCount=" + itemCount + "|" + 
-              "price=" + price + "|" + 
-              ", furnitureHistory=" + furnitureHistory + "}";
+          return "ID=" + id + 
+              " \nFurniture Category=" + furnitureCategory +
+              " \nItem Count=" + itemCount +
+              " \nPrice=" + price +
+              " \nFurniture History=" + furnitureHistory;
     }
 }

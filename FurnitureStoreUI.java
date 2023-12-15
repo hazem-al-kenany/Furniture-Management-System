@@ -72,7 +72,8 @@ public class FurnitureStoreUI {
     private void addFurniture() {
         System.out.println("Enter furniture details:");
         System.out.print("ID: ");
-        String id = reader.nextLine();
+        int id = reader.nextInt();
+        reader.nextLine(); // Consume newline
         System.out.print("Category: ");
         String category = reader.nextLine();
         System.out.print("Item Count: ");
@@ -91,7 +92,8 @@ public class FurnitureStoreUI {
     private void addPurchaser() {
         System.out.println("Enter purchaser details:");
         System.out.print("ID: ");
-        String id = reader.nextLine();
+        int id = reader.nextInt();
+        reader.nextLine(); // Consume newline
         System.out.print("Name: ");
         String name = reader.nextLine();
         System.out.print("Furniture Type: ");
@@ -117,7 +119,8 @@ public class FurnitureStoreUI {
     private void addCategory() {
         System.out.println("Enter category details:");
         System.out.print("ID: ");
-        String id = reader.nextLine();
+        int id = reader.nextInt();
+        reader.nextLine(); // Consume newline
         System.out.print("Name: ");
         String name = reader.nextLine();
         System.out.print("Discount: ");
