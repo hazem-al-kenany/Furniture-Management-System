@@ -26,41 +26,52 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         loadOrders();
     }
 
+    private void linkOrdersToFurniture() {
+        for (FurnitureCategory order : allCustomerOrders) {
+            PassFurnitureBase furniturePiece = getFurnitureByID(Integer.parseInt(order.getID()));
+            if (furniturePiece != null) {
+                order.setFurnitureItem(furniturePiece);
+            }
+        }
+    }
+
     // Implementation of the methods from FURNITURE interface
     @Override
     public void addFurniture(PassFurnitureBase furniture) {
-       
+       allFurniturePieces.add(furniture);
     }
 
     @Override
     public void addPurchaser(Purchaser purchaser) {
-     
+        allSuppliers.add(purchaser);
     }
 
     @Override
     public void addCategory(FurnitureCategory category) {
-       
+        allCustomerOrders.add(category);
     }
 
     @Override
-    public FurnitureBase getFurnitureByID(int id) {
-
-
-    return null; // Not found
+    public PassFurnitureBase getFurnitureByID(int id) {
+        if (id>0 && id<allFurniturePieces.size()) {
+            return allFurniturePieces.get(id);
+        }
+        return null; // Not found
     }
 
     @Override
     public Purchaser getPurchaserByID(int id) {
-     
-
-    return null; // Not found
+                if (id>0 && id<allSuppliers.size()) {
+            return allSuppliers.get(id);
+        }
+        return null; // Not found
     }
 
     @Override
     public FurnitureCategory getCategoryByID(int id) {
-
-
-    
+                if (id>0 && id<allCustomerOrders.size()) {
+            return allCustomerOrders.get(id);
+        }
         return null; // Not found
     }
 
@@ -118,11 +129,11 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         PassFurnitureBase wardrobe = allFurniturePieces.get(4);
     
         //Creating FurnitureCategory objects
-        FurnitureCategory chairCategory = new FurnitureCategory("1", "Chair", 0.0, true, ikea);
-        FurnitureCategory tableCategory = new FurnitureCategory("2", "Table", 0.0, true, walmart);
-        FurnitureCategory sofaCategory = new FurnitureCategory("3", "Sofa", 0.0, false, westElm);
-        FurnitureCategory bedCategory = new FurnitureCategory("4", "Bed", 0.0, false, target);
-        FurnitureCategory wardrobeCategory = new FurnitureCategory("5", "Wardrobe", 0.0, false, homeGoods);
+        FurnitureCategory chairCategory = new FurnitureCategory("1", "Chair", 0.0, true, ikea, "101", 5);
+        FurnitureCategory tableCategory = new FurnitureCategory("2", "Table", 0.0, true, walmart, "102", 3);
+        FurnitureCategory sofaCategory = new FurnitureCategory("3", "Sofa", 0.0, false, westElm, "103", 2);
+        FurnitureCategory bedCategory = new FurnitureCategory("4", "Bed", 0.0, false, target, "104", 1);
+        FurnitureCategory wardrobeCategory = new FurnitureCategory("5", "Wardrobe", 0.0, false, homeGoods, "105", 4);
     
         //Adding orders to the list
         allCustomerOrders.add(chairCategory);
@@ -130,7 +141,6 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         allCustomerOrders.add(sofaCategory);
         allCustomerOrders.add(bedCategory);
         allCustomerOrders.add(wardrobeCategory);
-    
     }
 
     // Additional helper methods (optional)

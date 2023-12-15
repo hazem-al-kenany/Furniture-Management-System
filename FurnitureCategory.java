@@ -12,15 +12,19 @@ import java.util.*;
  */
 public class FurnitureCategory {
     //Attributes
-    private String id;
-    private String typeName;
-    private double maximumLoad;
-    private boolean isOutdoor;
-    private Purchaser recentPurchaser;
-    private List<String> materials;
+    public String id;
+    public String typeName;
+    public double maximumLoad;
+    public boolean isOutdoor;
+    public Purchaser recentPurchaser;
+    public List<String> materials;
+    
+    //extra attributes for "Orders"
+    public String orderId;
+    public int quantity;
     
     //A constructor that takes arguments to set the initial values for the attributes.
-        public FurnitureCategory(String id, String typeName, double maximumLoad, boolean isOutdoor, Purchaser recentPurchaser) {
+        public FurnitureCategory(String id, String typeName, double maximumLoad, boolean isOutdoor, Purchaser recentPurchaser, String orderId, int quantity) {
         this.id = id;
         this.typeName = typeName;
         this.maximumLoad = maximumLoad;
@@ -28,6 +32,8 @@ public class FurnitureCategory {
         this.recentPurchaser = recentPurchaser;
         this.materials = new ArrayList<>();
         
+        this.orderId = orderId;
+        this.quantity = quantity;
     }
     
         public String getID() {
@@ -62,5 +68,15 @@ public class FurnitureCategory {
     
         public boolean isSuitableForOutdoor() {
         return isOutdoor && maximumLoad > 50.0;
+    }
+    //Extra methods for linking an undefined order to item
+    private PassFurnitureBase furnitureItem;
+    
+        public void setFurnitureItem(PassFurnitureBase furnitureItem) {
+        this.furnitureItem = furnitureItem;
+    }
+    
+        public PassFurnitureBase getFurnitureItem() {
+        return furnitureItem;
     }
 }

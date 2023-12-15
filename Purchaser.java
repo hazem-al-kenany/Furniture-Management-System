@@ -1,7 +1,4 @@
 import java.util.*;
-import java.util.List;
-import java.util.ArrayList;
-
 /**
  * A Purchaser is a vital entity in the FurnitureStore system. Each Purchaser has an ID, 
  * a name, contact information including phone number, email, and a physical address. 
