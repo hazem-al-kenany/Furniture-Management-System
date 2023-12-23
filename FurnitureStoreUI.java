@@ -81,10 +81,8 @@ public class FurnitureStoreUI {
         System.out.print("Price: ");
         double price = reader.nextDouble();
         reader.nextLine(); // Consume newline
-        System.out.print("History: ");
-        String history = reader.nextLine();
 
-        PassFurnitureBase furniture = new PassFurnitureBase(id, category, itemCount, price, history);
+        PassFurnitureBase furniture = new PassFurnitureBase(id, category, itemCount, price);
         store.addFurniture(furniture);
         System.out.println("Furniture added successfully!");
     }

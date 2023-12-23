@@ -10,8 +10,8 @@ public class FurnitureBaseTester
     public static void main(String[] args)
     {
         // Creating FurnitureBase objects using different constructors
-        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 10, 49.99, "Wooden chair");
-        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 5, 149.99, "Oak wood table");
+        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 10, 49.99);
+        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 5, 149.99);
 
         // Displaying initial details
         System.out.println("Initial Details:");
@@ -21,11 +21,15 @@ public class FurnitureBaseTester
         // Modifying details using setters
         chair.setFurnitureCategory("Foldable Chair");
         table.setFurnitureCategory("Foldable Table");
-
-        // Displaying updated details
+        
+        // Adding both objects to inventory
+        PassFurnitureBase.addToFurnitureInventory(chair);
+        PassFurnitureBase.addToFurnitureInventory(table);
+        
+        // Displaying items in inventory + updated category
         System.out.println("\nUpdated Details:");
-        System.out.println(chair.toString());
-        System.out.println(table.toString());
+        chair.displayFurnitureInventory();
+        table.displayFurnitureInventory();
 
         // Calculating discount for a furniture item
         float chairDiscount = chair.calculateDiscount();
@@ -35,13 +39,21 @@ public class FurnitureBaseTester
         System.out.println("\nChair Category: " + chair.getFurnitureCategory());
 
         // Associating a purchaser
-        Purchaser buyer = new Purchaser("John Doe", "john@example.com");
-        chair.associatePurchaser(buyer);
-        System.out.println("\nAssociated Purchaser for Chair: " + chair.getPurchaserDetails()); //not yet implemented
-
-        // Displaying all furniture details
+        Purchaser buyer = new Purchaser(1, "John Doe", "john@example.com");
+        String associatedPurchaser = chair.associatePurchaser(buyer);
+        System.out.println(associatedPurchaser);
+        System.out.println("Details for Purchaser of Chair: " + buyer.getContactDetails());
+        
+        // Set procurement date and display details
+        chair.setProcurementDate(new Date());
+        System.out.println("\nDetails after setting procurement date:");
+        chair.displayDetails();
+        
+        // Adding Furniture Categories
+        FurnitureCategory sofaCategory = new FurnitureCategory(1, "Sofa", 200.0, true, buyer, "SOFA-ORDER-001", 10);
+        FurnitureCategory diningTableCategory = new FurnitureCategory(2, "Dining Table", 150.0, false, buyer, "TABLE-ORDER-002", 5);
+        // Showing all furniture details
         System.out.println("\nAll Furniture Details:");
-        chair.showAllFurnitureDetails();
-        table.showAllFurnitureDetails();
+        PassFurnitureBase.showAllFurnitureDetails();
     }
 }    

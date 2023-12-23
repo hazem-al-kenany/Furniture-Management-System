@@ -14,8 +14,8 @@ public void doTest() {
      Scanner enter = new Scanner(System.in);
      
      // Write all of your tests here
-    homeFurnishingsDepot.addFurniture(new PassFurnitureBase(1, "Chair", 4, 75.0, "Wooden Chair"));
-    homeFurnishingsDepot.addFurniture(new PassFurnitureBase(2, "Table", 3, 150.0, "Dining Table"));
+    homeFurnishingsDepot.addFurniture(new PassFurnitureBase(1, "Chair", 4, 75.0));
+    homeFurnishingsDepot.addFurniture(new PassFurnitureBase(2, "Table", 3, 150.0));
 
     // Adding purchasers
     homeFurnishingsDepot.addPurchaser(new Purchaser(1, "Customer A", "Furniture Enthusiast"));

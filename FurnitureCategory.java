@@ -23,6 +23,9 @@ public class FurnitureCategory {
     public String orderId;
     public int quantity;
     
+    //extra list to store all categories;
+    public static List<FurnitureCategory> allCategories = new ArrayList<>();
+    
     //A constructor that takes arguments to set the initial values for the attributes.
         public FurnitureCategory(int id, String typeName, double maximumLoad, boolean isOutdoor, Purchaser recentPurchaser, String orderId, int quantity) {
         this.id = id;
@@ -34,6 +37,8 @@ public class FurnitureCategory {
         
         this.orderId = orderId;
         this.quantity = quantity;
+        
+        allCategories.add(this);
     }
     
         public int getID() {
@@ -50,7 +55,6 @@ public class FurnitureCategory {
 
     public String getRoomRecommendation() {
         //Indicates the recommended room for this furniture.
-        // Example logic:
         if (typeName.equals("Sofa")) {
             return "Living room";
         } else if (typeName.equals("Table")) {
@@ -78,5 +82,10 @@ public class FurnitureCategory {
     
         public PassFurnitureBase getFurnitureItem() {
         return furnitureItem;
+    }
+    
+    //getter for all categories
+        public static List<FurnitureCategory> getAllCategories() {
+        return allCategories;
     }
 }

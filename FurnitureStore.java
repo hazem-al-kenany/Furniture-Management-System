@@ -81,11 +81,11 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         // This may involve instantiating new FurnitureBase and Purchaser objects and adding them to the respective lists.
         
         //Creating furniture objects
-        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 1, 100.0, "Wooden Chair");
-        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 1, 300.0, "Dining Table");
-        PassFurnitureBase sofa = new PassFurnitureBase(3, "Sofa", 1, 800, "Leather Sofa");
-        PassFurnitureBase bed = new PassFurnitureBase(4, "Bed", 1, 1200, "King Sized Bed");
-        PassFurnitureBase wardrobe = new PassFurnitureBase(5, "Wardrobe", 1, 900, "Wooden Wardrobe");
+        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 1, 100.0);
+        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 1, 300.0);
+        PassFurnitureBase sofa = new PassFurnitureBase(3, "Sofa", 1, 800);
+        PassFurnitureBase bed = new PassFurnitureBase(4, "Bed", 1, 1200);
+        PassFurnitureBase wardrobe = new PassFurnitureBase(5, "Wardrobe", 1, 900);
         
         // Adding furniture pieces to the collection based on their IDs
         allFurniturePieces.add(chair.getID() - 1, chair);
