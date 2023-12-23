@@ -10,8 +10,8 @@ public class Tester{
     
 // The doTest() method where you will write code to test your system
 public void doTest() {
-        FURNITUREInterface  homeFurnishingsDepot = new FurnitureStore("Home Furnishings Depot", "123 Furniture Street");
-     Scanner enter = new Scanner(System.in);
+    FURNITUREInterface  homeFurnishingsDepot = new FurnitureStore("Home Furnishings Depot", "123 Furniture Street");
+    Scanner enter = new Scanner(System.in);
      
      // Write all of your tests here
     homeFurnishingsDepot.addFurniture(new PassFurnitureBase(1, "Chair", 4, 75.0));
@@ -51,7 +51,6 @@ public void doTest() {
     System.out.println("\nViewing category details:");
     FurnitureCategory chairCategory = homeFurnishingsDepot.getCategoryByID(1);
     if (chairCategory != null) {
-            System.out.println("Category Details:");
             System.out.println("Name: " + chairCategory.getTypeName());
             System.out.println("ID: " + chairCategory.getID());
             System.out.println("Max Load: " + chairCategory.getMaxLoad());
