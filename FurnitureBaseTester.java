@@ -52,6 +52,7 @@ public class FurnitureBaseTester
         // Adding Furniture Categories
         FurnitureCategory sofaCategory = new FurnitureCategory(1, "Sofa", 200.0, true, buyer, "SOFA-ORDER-001", 10);
         FurnitureCategory diningTableCategory = new FurnitureCategory(2, "Dining Table", 150.0, false, buyer, "TABLE-ORDER-002", 5);
+        
         // Showing all furniture details
         System.out.println("\nAll Furniture Details:");
         furnitureBase.showAllFurnitureDetails();

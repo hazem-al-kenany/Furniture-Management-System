@@ -16,12 +16,12 @@ public class Teamwork
         // If there is only 1 team member, please complete details 
         // for programmer1
         
-        details[0] = "surname of programmer1";
-        details[1] = "first name of programmer1";
-        details[2] = "SRN of programmer1";
+        details[0] = "El Rouby";
+        details[1] = "Ameena";
+        details[2] = "21029767";
         details[3] = "Elknany";
         details[4] = "Hazem";
-        details[5] = "202100186";
+        details[5] = "21010790";
     }
     
     public String[] getTeamDetails()
