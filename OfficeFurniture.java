@@ -10,6 +10,49 @@
  * Furthermore, this classification helps in streamlining product recommendations for businesses and professionals 
  * and enables the store to target specific marketing and sales strategies towards corporate clients or remote workers.
  */
-public class OfficeFurniture {
-    // class members...
+public class OfficeFurniture extends furnitureBase{
+    public String furnitureCategory;
+    public boolean isErgonomic;
+    public String material;
+    public double price;
+    
+    //default constructor
+    public OfficeFurniture() {
+        
+    }
+    
+        public OfficeFurniture(String furnitureCategory, boolean isErgonomic, String material, double price) {
+        this.furnitureCategory = furnitureCategory;
+        this.isErgonomic = isErgonomic;
+        this.material = material;
+        this.price = price;
+    }
+    
+        public String getCategory() {
+        return furnitureCategory;
+    }
+    
+        public boolean isErgonomicFurniture() {
+        return isErgonomic;
+    }
+    
+        public String getMaterial() {
+        return material;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+    
+    public void adjustPrice() {
+        if (isErgonomic) {
+            price += 0.1*price; //10% price increase
+        }
+        if (material.equals("Wood")) {
+            price += 0.15*price; //15% price increase
+        }
+        else if (material.equals("Metal")) {
+            price += 0.05*price; //5% price increase
+        }
+    }
 }
