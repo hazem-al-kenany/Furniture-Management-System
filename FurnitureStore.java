@@ -9,7 +9,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     private String location;
 
     //Collections to manage references
-    public List<PassFurnitureBase> allFurniturePieces;
+    public List<furnitureBase> allFurniturePieces;
     public List<Purchaser> allSuppliers;
     public List<FurnitureCategory> allCustomerOrders;
     
@@ -28,7 +28,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
 
     private void linkOrdersToFurniture() {
         for (FurnitureCategory order : allCustomerOrders) {
-            PassFurnitureBase furniturePiece = getFurnitureByID(order.getID());
+            furnitureBase furniturePiece = getFurnitureByID(order.getID());
             if (furniturePiece != null) {
                 order.setFurnitureItem(furniturePiece);
             }
@@ -37,7 +37,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
 
     // Implementation of the methods from FURNITURE interface
     @Override
-    public void addFurniture(PassFurnitureBase furniture) {
+    public void addFurniture(furnitureBase furniture) {
        allFurniturePieces.add(furniture.getID() -1, furniture);
     }
 
@@ -52,7 +52,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     }
 
     @Override
-    public PassFurnitureBase getFurnitureByID(int id) {
+    public furnitureBase getFurnitureByID(int id) {
         if (id>0 && id<allFurniturePieces.size()) {
             return allFurniturePieces.get(id-1); //-1 because of index in array list
         }
@@ -81,11 +81,11 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         // This may involve instantiating new FurnitureBase and Purchaser objects and adding them to the respective lists.
         
         //Creating furniture objects
-        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 1, 100.0);
-        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 1, 300.0);
-        PassFurnitureBase sofa = new PassFurnitureBase(3, "Sofa", 1, 800);
-        PassFurnitureBase bed = new PassFurnitureBase(4, "Bed", 1, 1200);
-        PassFurnitureBase wardrobe = new PassFurnitureBase(5, "Wardrobe", 1, 900);
+        furnitureBase chair = new subFurnitureBase(1, "Chair", 1, 100.0);
+        furnitureBase table = new subFurnitureBase(2, "Table", 1, 300.0);
+        furnitureBase sofa = new subFurnitureBase(3, "Sofa", 1, 800);
+        furnitureBase bed = new subFurnitureBase(4, "Bed", 1, 1200);
+        furnitureBase wardrobe = new subFurnitureBase(5, "Wardrobe", 1, 900);
         
         // Adding furniture pieces to the collection based on their IDs
         allFurniturePieces.add(chair.getID() - 1, chair);
@@ -122,11 +122,11 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         Purchaser homeGoods = allSuppliers.get(4);
         
         //Doing the same for furniture objects
-        PassFurnitureBase chair = allFurniturePieces.get(0);
-        PassFurnitureBase table = allFurniturePieces.get(1);
-        PassFurnitureBase sofa = allFurniturePieces.get(2);
-        PassFurnitureBase bed = allFurniturePieces.get(3);
-        PassFurnitureBase wardrobe = allFurniturePieces.get(4);
+        furnitureBase chair = allFurniturePieces.get(0);
+        furnitureBase table = allFurniturePieces.get(1);
+        furnitureBase sofa = allFurniturePieces.get(2);
+        furnitureBase bed = allFurniturePieces.get(3);
+        furnitureBase wardrobe = allFurniturePieces.get(4);
     
         //Creating FurnitureCategory objects
         FurnitureCategory chairCategory = new FurnitureCategory(1, "Chair", 0.0, true, ikea, "101", 5);
@@ -144,7 +144,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     }
 
     // Additional helper methods (optional)
-    private PassFurnitureBase retrieveFurniture(int id) {
+    private furnitureBase retrieveFurniture(int id) {
         return getFurnitureByID(id);
     }
 

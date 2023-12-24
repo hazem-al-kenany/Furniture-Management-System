@@ -10,8 +10,8 @@ public class FurnitureBaseTester
     public static void main(String[] args)
     {
         // Creating FurnitureBase objects using different constructors
-        PassFurnitureBase chair = new PassFurnitureBase(1, "Chair", 10, 49.99);
-        PassFurnitureBase table = new PassFurnitureBase(2, "Table", 5, 149.99);
+        furnitureBase chair = new subFurnitureBase(1, "Chair", 10, 49.99);
+        furnitureBase table = new subFurnitureBase(2, "Table", 5, 149.99);
 
         // Displaying initial details
         System.out.println("Initial Details:");
@@ -23,8 +23,8 @@ public class FurnitureBaseTester
         table.setFurnitureCategory("Foldable Table");
         
         // Adding both objects to inventory
-        PassFurnitureBase.addToFurnitureInventory(chair);
-        PassFurnitureBase.addToFurnitureInventory(table);
+        furnitureBase.addToFurnitureInventory(chair);
+        furnitureBase.addToFurnitureInventory(table);
         
         // Displaying items in inventory + updated category
         System.out.println("\nUpdated Details:");
@@ -54,6 +54,6 @@ public class FurnitureBaseTester
         FurnitureCategory diningTableCategory = new FurnitureCategory(2, "Dining Table", 150.0, false, buyer, "TABLE-ORDER-002", 5);
         // Showing all furniture details
         System.out.println("\nAll Furniture Details:");
-        PassFurnitureBase.showAllFurnitureDetails();
+        furnitureBase.showAllFurnitureDetails();
     }
 }    

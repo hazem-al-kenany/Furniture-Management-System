@@ -82,7 +82,7 @@ public class FurnitureStoreUI {
         double price = reader.nextDouble();
         reader.nextLine(); // Consume newline
 
-        PassFurnitureBase furniture = new PassFurnitureBase(id, category, itemCount, price);
+        furnitureBase furniture = new subFurnitureBase(id, category, itemCount, price);
         store.addFurniture(furniture);
         System.out.println("Furniture added successfully!");
     }
@@ -144,7 +144,7 @@ public class FurnitureStoreUI {
     private void viewFurniture() {
         System.out.print("Enter furniture ID: ");
         int furnitureId = reader.nextInt();
-        PassFurnitureBase furniture = store.getFurnitureByID(furnitureId);
+        furnitureBase furniture = store.getFurnitureByID(furnitureId);
         if (furniture != null) {
             System.out.println("Furniture Details:");
             System.out.println(furniture.toString());

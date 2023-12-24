@@ -14,8 +14,8 @@ public void doTest() {
     Scanner enter = new Scanner(System.in);
      
      // Write all of your tests here
-    homeFurnishingsDepot.addFurniture(new PassFurnitureBase(1, "Chair", 4, 75.0));
-    homeFurnishingsDepot.addFurniture(new PassFurnitureBase(2, "Table", 3, 150.0));
+    homeFurnishingsDepot.addFurniture(new subFurnitureBase(1, "Chair", 4, 75.0));
+    homeFurnishingsDepot.addFurniture(new subFurnitureBase(2, "Table", 3, 150.0));
 
     // Adding purchasers
     homeFurnishingsDepot.addPurchaser(new Purchaser(1, "Customer A", "Furniture Enthusiast"));
@@ -27,7 +27,7 @@ public void doTest() {
 
     // Viewing furniture details
     System.out.println("Viewing furniture details:");
-    PassFurnitureBase chair = homeFurnishingsDepot.getFurnitureByID(1);
+    furnitureBase chair = homeFurnishingsDepot.getFurnitureByID(1);
     if (chair != null) {
         System.out.println(chair.toString());
     }

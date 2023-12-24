@@ -2,7 +2,7 @@
 comment0.target=FURNITUREInterface
 comment0.text=\n\ This\ interface\ provides\ a\ blueprint\ for\ basic\ operations\ on\ furniture,\ purchasers,\ \n\ and\ furniture\ categories\ within\ a\ furniture\ management\ system.\n
 comment1.params=furniture
-comment1.target=void\ addFurniture(PassFurnitureBase)
+comment1.target=void\ addFurniture(furnitureBase)
 comment1.text=\n\ Adds\ a\ new\ piece\ of\ furniture\ to\ the\ system.\n\n\ @param\ furniture\ The\ FurnitureBase\ object\ to\ be\ added.\n
 comment2.params=purchaser
 comment2.target=void\ addPurchaser(Purchaser)
@@ -11,7 +11,7 @@ comment3.params=category
 comment3.target=void\ addCategory(FurnitureCategory)
 comment3.text=\n\ Adds\ a\ new\ category\ for\ furniture\ in\ the\ system.\n\n\ @param\ category\ The\ FurnitureCategory\ object\ to\ be\ added.\n
 comment4.params=id
-comment4.target=PassFurnitureBase\ getFurnitureByID(int)
+comment4.target=furnitureBase\ getFurnitureByID(int)
 comment4.text=\n\ Retrieves\ a\ piece\ of\ furniture\ by\ its\ unique\ ID.\n\n\ @param\ id\ The\ unique\ identifier\ of\ the\ desired\ furniture.\n\ @return\ FurnitureBase\ object\ with\ the\ matching\ ID\ or\ null\ if\ not\ found.\n
 comment5.params=id
 comment5.target=Purchaser\ getPurchaserByID(int)

@@ -1,18 +1,18 @@
 #BlueJ class context
-comment0.target=PassFurnitureBase
+comment0.target=furnitureBase
 comment0.text=\n\ FurnitureBase\ represents\ an\ individual\ furniture\ item\ within\ the\ FurnitureStore\ system.\n\ Each\ FurnitureBase\ has\ a\ unique\ ID,\ a\ description\ detailing\ its\ characteristics,\ \n\ a\ type\ or\ category\ (like\ chair,\ table,\ bed),\ materials\ used,\ dimensions,\ \n\ and\ a\ price.\ The\ store's\ inventory\ is\ essentially\ a\ collection\ of\ FurnitureBase\ objects.\n\ The\ system\ relies\ on\ the\ comprehensive\ data\ within\ each\ FurnitureBase\ \n\ to\ manage\ stock\ levels,\ make\ sales\ transactions,\ and\ provide\ detailed\ \n\ product\ information\ to\ both\ staff\ and\ customers.\ Properly\ maintained\ \n\ FurnitureBase\ records\ ensure\ that\ the\ store\ can\ track\ product\ availability,\ \n\ popularity,\ and\ sales\ trends\ over\ time.\n
 comment1.params=
-comment1.target=PassFurnitureBase()
+comment1.target=furnitureBase()
 comment10.params=
 comment10.target=java.lang.String\ toString()
 comment11.params=item
-comment11.target=void\ addToFurnitureInventory(PassFurnitureBase)
+comment11.target=void\ addToFurnitureInventory(furnitureBase)
 comment12.params=date
 comment12.target=void\ setProcurementDate(java.util.Date)
 comment13.params=
 comment13.target=void\ displayFurnitureInventory()
 comment2.params=id\ furnitureCategory\ itemCount\ price
-comment2.target=PassFurnitureBase(int,\ java.lang.String,\ int,\ double)
+comment2.target=furnitureBase(int,\ java.lang.String,\ int,\ double)
 comment3.params=
 comment3.target=int\ getID()
 comment4.params=

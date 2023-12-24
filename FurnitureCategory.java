@@ -74,13 +74,13 @@ public class FurnitureCategory {
         return isOutdoor && maximumLoad > 50.0;
     }
     //Extra methods for linking an undefined order to item
-    private PassFurnitureBase furnitureItem;
+    private furnitureBase furnitureItem;
     
-        public void setFurnitureItem(PassFurnitureBase furnitureItem) {
+        public void setFurnitureItem(furnitureBase furnitureItem) {
         this.furnitureItem = furnitureItem;
     }
     
-        public PassFurnitureBase getFurnitureItem() {
+        public furnitureBase getFurnitureItem() {
         return furnitureItem;
     }
     

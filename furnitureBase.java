@@ -11,24 +11,24 @@ import java.util.*;
  * popularity, and sales trends over time.
  */
 
-public class PassFurnitureBase 
+public abstract class furnitureBase 
 {
    //fields
    public int id;
    public String furnitureCategory;
    public int itemCount;
    public double price;
-   public static List<PassFurnitureBase> furnitureInventory;
+   public static List<furnitureBase> furnitureInventory;
 
    public Date procurementDate; // New variable to store procurement date   
     
    // Default Constructor
-    public PassFurnitureBase() {
+    public furnitureBase() {
         // Default initialization or actions if needed
     }
     
     // Constructor with parameters for furnitureCategory and itemCount
-    public PassFurnitureBase(int id, String furnitureCategory, int itemCount, double price) {
+    public furnitureBase(int id, String furnitureCategory, int itemCount, double price) {
         this.id = id;
         this.furnitureCategory = furnitureCategory;
         this.itemCount = itemCount;
@@ -42,8 +42,8 @@ public class PassFurnitureBase
    }
   
    public float calculateDiscount() {
-       if (price>1000) {
-           return (float) (0.1 * price); //10% discount if price is greater than $1,000
+       if (price>100) {
+           return (float) (0.1 * price); //10% discount if price is greater than $100
         }
         else {
             return 0;
@@ -104,7 +104,7 @@ public class PassFurnitureBase
    //Extra methods:
    
    //adds furniture objects to inventory
-   public static void addToFurnitureInventory(PassFurnitureBase item) {
+   public static void addToFurnitureInventory(furnitureBase item) {
        furnitureInventory.add(item);
    }
    
@@ -120,7 +120,7 @@ public class PassFurnitureBase
         }
         else {
             System.out.println("Furniture Inventory:");
-            for (PassFurnitureBase item : furnitureInventory) {
+            for (furnitureBase item : furnitureInventory) {
                 System.out.println(item.toString());
             }
         }
