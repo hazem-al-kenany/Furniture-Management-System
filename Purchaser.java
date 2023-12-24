@@ -17,6 +17,9 @@ public class Purchaser {
     public Date purchaseDate;
     public List<String> purchaseHistory;
     
+    //extra attributes
+    public furnitureBase furnitureItem; //links the ordered item to the corresponding furniture pieces (purchaser class)
+    
     //constructor with id, name, and furnitureType
         public Purchaser(int id, String name, String furnitureType) {
         this.id = id;
@@ -62,5 +65,15 @@ public class Purchaser {
     //might be restricted from making more purchases or might get exclusive access to buy certain premium items.
         public boolean isPurchaseValid(int THRESHOLD_VALUE) {
         return purchaseHistory.size() < THRESHOLD_VALUE;
+    }
+    
+    //Extra methods for linking an undefined order to item
+    
+        public void setFurnitureItem(furnitureBase furnitureItem) {
+        this.furnitureItem = furnitureItem;
+    }
+    
+        public furnitureBase getFurnitureItem() {
+        return furnitureItem;
     }
 }

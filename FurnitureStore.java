@@ -10,8 +10,8 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
 
     //Collections to manage references
     public List<furnitureBase> allFurniturePieces;
-    public List<Purchaser> allSuppliers;
-    public List<FurnitureCategory> allCustomerOrders;
+    public List<FurnitureCategory> allSuppliers;
+    public List<Purchaser> allCustomerOrders;
     
     // Constructor
     public FurnitureStore(String storeName, String location) {
@@ -27,7 +27,7 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
     }
 
     private void linkOrdersToFurniture() {
-        for (FurnitureCategory order : allCustomerOrders) {
+        for (Purchaser order : allCustomerOrders) {
             furnitureBase furniturePiece = getFurnitureByID(order.getID());
             if (furniturePiece != null) {
                 order.setFurnitureItem(furniturePiece);
@@ -43,17 +43,17 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
 
     @Override
     public void addPurchaser(Purchaser purchaser) {
-        allSuppliers.add(purchaser.getID() -1, purchaser);
+        allCustomerOrders.add(purchaser.getID() -1, purchaser);
     }
 
     @Override
     public void addCategory(FurnitureCategory category) {
-        allCustomerOrders.add(category.getID() -1, category);
+        allSuppliers.add(category.getID() -1, category);
     }
 
     @Override
     public furnitureBase getFurnitureByID(int id) {
-        if (id>0 && id<allFurniturePieces.size()) {
+        if (id>0 && id<=allFurniturePieces.size()) {
             return allFurniturePieces.get(id-1); //-1 because of index in array list
         }
         return null; // Not found
@@ -61,18 +61,18 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
 
     @Override
     public Purchaser getPurchaserByID(int id) {
-                if (id>0 && id<allSuppliers.size()) {
-            return allSuppliers.get(id-1); //-1 because of index in array list
+                if (id>0 && id<=allCustomerOrders.size()) {
+            return allCustomerOrders.get(id-1); 
         }
-        return null; // Not found
+        return null; 
     }
 
     @Override
     public FurnitureCategory getCategoryByID(int id) {
-                if (id>0 && id<allCustomerOrders.size()) {
-            return allCustomerOrders.get(id-1); //-1 because of index in array list
+                if (id>0 && id<=allSuppliers.size()) {
+            return allSuppliers.get(id-1); 
         }
-        return null; // Not found
+        return null; 
     }
 
     // Private methods as specified
@@ -88,19 +88,18 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         furnitureBase wardrobe = new subFurnitureBase(5, "Wardrobe", 1, 900);
         
         // Adding furniture pieces to the collection based on their IDs
-        allFurniturePieces.add(chair.getID() - 1, chair);
-        allFurniturePieces.add(table.getID() - 1, table);
-        allFurniturePieces.add(sofa.getID() - 1, sofa);
-        allFurniturePieces.add(bed.getID() - 1, bed);
-        allFurniturePieces.add(wardrobe.getID() - 1, wardrobe);
+        allFurniturePieces.add(chair);
+        allFurniturePieces.add(table);
+        allFurniturePieces.add(sofa);
+        allFurniturePieces.add(bed);
+        allFurniturePieces.add(wardrobe);
         
-        //Creating Suppliers/Purchasers
-        Date currentDate = new Date();
-        Purchaser ikea = new Purchaser(1, "IKEA", "n/a", "ikea@example.com", currentDate);
-        Purchaser walmart = new Purchaser(2, "Walmart", "n/a", "walmart@example.com", currentDate);
-        Purchaser westElm = new Purchaser(3, "West Elm", "n/a", "westelm@example.com", currentDate);
-        Purchaser target = new Purchaser(4, "Target", "n/a", "target@example.com", currentDate);
-        Purchaser homeGoods = new Purchaser(5, "HomeGoods", "n/a", "homegoods@example.com", currentDate);
+        //Creating Suppliers/Furniture categories
+        FurnitureCategory ikea = new FurnitureCategory (1, "IKEA", 0, false, null, "1", 1);
+        FurnitureCategory walmart = new FurnitureCategory (2, "Walmart", 0, false, null, "2", 1);
+        FurnitureCategory westElm = new FurnitureCategory (3, "West Elm", 0, false, null, "3", 1);
+        FurnitureCategory target = new FurnitureCategory (4, "Target", 0, false, null, "4", 1);
+        FurnitureCategory homeGoods = new FurnitureCategory (5, "HomeGoods", 0, false, null, "5", 1);
         
         //Adding suppliers to the collection
         allSuppliers.add(ikea);
@@ -114,12 +113,12 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         // Logic to populate customerOrders
         // This may involve instantiating new FurnitureCategory objects and adding them to the list.
         
-        //Declaring purchaser variables (linking object with the list)
-        Purchaser ikea = allSuppliers.get(0);
-        Purchaser walmart = allSuppliers.get(1);
-        Purchaser westElm = allSuppliers.get(2);
-        Purchaser target = allSuppliers.get(3);
-        Purchaser homeGoods = allSuppliers.get(4);
+        //Declaring FurnitureCategory variables (linking object with the list)
+        FurnitureCategory ikea = allSuppliers.get(0);
+        FurnitureCategory walmart = allSuppliers.get(1);
+        FurnitureCategory westElm = allSuppliers.get(2);
+        FurnitureCategory target = allSuppliers.get(3);
+        FurnitureCategory homeGoods = allSuppliers.get(4);
         
         //Doing the same for furniture objects
         furnitureBase chair = allFurniturePieces.get(0);
@@ -128,19 +127,19 @@ public class FurnitureStore implements FURNITUREInterface // do not change this 
         furnitureBase bed = allFurniturePieces.get(3);
         furnitureBase wardrobe = allFurniturePieces.get(4);
     
-        //Creating FurnitureCategory objects
-        FurnitureCategory chairCategory = new FurnitureCategory(1, "Chair", 0.0, true, ikea, "101", 5);
-        FurnitureCategory tableCategory = new FurnitureCategory(2, "Table", 0.0, true, walmart, "102", 3);
-        FurnitureCategory sofaCategory = new FurnitureCategory(3, "Sofa", 0.0, false, westElm, "103", 2);
-        FurnitureCategory bedCategory = new FurnitureCategory(4, "Bed", 0.0, false, target, "104", 1);
-        FurnitureCategory wardrobeCategory = new FurnitureCategory(5, "Wardrobe", 0.0, false, homeGoods, "105", 4);
+        //Creating purchaser objects
+        Purchaser chairOrder = new Purchaser(1, "Chair", "ChairType");
+        Purchaser tableOrder = new Purchaser(2, "Table", "TableType");
+        Purchaser sofaOrder = new Purchaser(3, "Sofa", "SofaType");
+        Purchaser bedOrder = new Purchaser(4, "Bed", "BedType");
+        Purchaser wardrobeOrder = new Purchaser(5, "Wardrobe", "WardrobeType");
     
         //Adding orders to the list
-        allCustomerOrders.add(chairCategory);
-        allCustomerOrders.add(tableCategory);
-        allCustomerOrders.add(sofaCategory);
-        allCustomerOrders.add(bedCategory);
-        allCustomerOrders.add(wardrobeCategory);
+        allCustomerOrders.add(chairOrder);
+        allCustomerOrders.add(tableOrder);
+        allCustomerOrders.add(sofaOrder);
+        allCustomerOrders.add(bedOrder);
+        allCustomerOrders.add(wardrobeOrder);
     }
 
     // Additional helper methods (optional)
