@@ -17,11 +17,11 @@ public class OfficeFurniture extends furnitureBase{
     public double price;
     
     //default constructor
-    public OfficeFurniture() {
-        
+    public OfficeFurniture(int id, String furnitureCategory, int itemCount, double price) {
+        super(id, furnitureCategory, itemCount, price);
     }
-    
-        public OfficeFurniture(String furnitureCategory, boolean isErgonomic, String material, double price) {
+  
+    public OfficeFurniture(String furnitureCategory, boolean isErgonomic, String material, double price) {
         this.furnitureCategory = furnitureCategory;
         this.isErgonomic = isErgonomic;
         this.material = material;

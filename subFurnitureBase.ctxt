@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=subFurnitureBase
-comment1.params=
-comment1.target=subFurnitureBase()
-comment2.params=id\ furnitureCategory\ itemCount\ price
-comment2.target=subFurnitureBase(int,\ java.lang.String,\ int,\ double)
-numComments=3
+comment1.params=id\ furnitureCategory\ itemCount\ price
+comment1.target=subFurnitureBase(int,\ java.lang.String,\ int,\ double)
+numComments=2

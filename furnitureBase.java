@@ -24,7 +24,7 @@ public abstract class furnitureBase
     
    // Default Constructor
     public furnitureBase() {
-        // Default initialization or actions if needed
+        // Default initialization or actions
     }
     
     // Constructor with parameters for furnitureCategory and itemCount
@@ -65,7 +65,7 @@ public abstract class furnitureBase
        else {
            System.out.println("No Procurement Date available");
        }
-        String details = toString(); // Basic furniture details
+        System.out.println(toString()); // Basic furniture details
    }
    
    public String associatePurchaser(Purchaser buyer) {

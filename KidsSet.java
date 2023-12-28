@@ -14,33 +14,39 @@
  * sales strategies towards families and institutions catering to children, like schools or daycares.
  */
 public class KidsSet extends furnitureBase{
-    public String kidsId;
-    public String furName;
-    public double price;
+    public String kidsId;  // id of furniture set
+    public String furName; //name of specific furniture piece 
+    public double price;   //price of furniture set
+    
+    //extra attributes
+    public String setName; // name of furniture set
+    public double furPrice; //price of specific furniture piece 
     
     //Default constructor
-    public KidsSet() {
-        
+    public KidsSet(int id, String furnitureCategory, int itemCount, double price) {
+        super(id, furnitureCategory, itemCount, price);
     }
     
-    public KidsSet(String kidsId, String furName, double price) {
+    public KidsSet(String kidsId, String furName, double price, String setName, double furPrice) {
         this.kidsId = kidsId;
         this.furName = furName;
         this.price = price;
+        this.setName = setName;
+        this.furPrice = furPrice;
     }
     
     public double getPrice() {
         return price;
     }
-
+    
     // Display price based on the set ID
     public void showPrice() {
-        System.out.println("Price for " + furName + " set: $" + price);
+        System.out.println("Price for " + setName + " set: $" + price);
     }
     
     // Provide mystery gift based on price
     public String mysteryGift() {
-        if (price > 500) {
+        if (price > 500) { 
             return "Luxury Office Chair";
         } else if (price >= 300 && price <= 500) {
             return "Desk Organizer Set";
@@ -49,13 +55,20 @@ public class KidsSet extends furnitureBase{
         } else if (price < 200 && price > 0) {
             return "No mystery gift for this purchase";
         }
-        
-        // For specific furniture set gifts
-        if (furName.equals("Dinosaur Adventure")) {
+        return "No mystery gift for this purchase";
+    }
+    
+    // For specific furniture set gifts
+    public String specialMysteryGift(){
+         if (setName.equals("Dinosaur Adventure")) { 
             return "Free Dino Lamp";
-        } else if (furName.equals("Space Explorer")) {
+        } else if (setName.equals("Space Explorer")) {
             return "Astronaut Pen Holder";
         }
-        return "No mystery gift for this purchase";
+        return "No special mystery gift for this purchase";
+    }
+    
+    public double getFurniturePrice() {
+        return furPrice;
     }
 }

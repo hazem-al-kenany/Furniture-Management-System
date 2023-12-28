@@ -58,6 +58,51 @@ public void doTest() {
     else {
         System.out.println("Category not found!");
     }
+    
+    //Testing OfficeFurniture
+    System.out.println("\nOffice Furniture:");
+    
+    //Creating objects
+    OfficeFurniture desk = new OfficeFurniture("Desk", true, "Wood", 300.0);
+    OfficeFurniture deskchair = new OfficeFurniture("Desk Chair", false, "Metal", 250.0);
+    
+    //Testing OfficeFurniture methods
+    System.out.println("Furniture Category: " + desk.getCategory()); //displays furnitureCategory of desk
+    System.out.println("Ergonomic status: " + deskchair.isErgonomicFurniture()); //displays whether deskchair is ergonomic
+    System.out.println("Material: " + desk.getMaterial()); //displays desk material
+    
+    System.out.println("Desk price: $" + desk.getPrice()); //displays deskchair price
+    System.out.println("Deskchair price: $" + deskchair.getPrice()); //displays desk price
+    
+    
+    //Testing price adjustment for both objects
+    desk.adjustPrice(); //new expected price = 379.5 (10% is added since it is ergonomic, then 15% is added because it is wood)
+    deskchair.adjustPrice(); // new expected price = 262.5 (5% is added becuse it is metal)
+    
+    //Viewing updated prices
+    System.out.println("Desk updated price: $" + desk.getPrice());
+    System.out.println("Deskchair updated price: $" + deskchair.getPrice());
+    
+    
+    //Testing KidsSet
+    System.out.println("\nKidsSet:");
+    
+    //Creating objects
+    KidsSet fairyTaleCastleBed = new KidsSet("SET001", "Fairy Tale Bed", 750.0, "Fairy Tale Castle", 300.0);
+    KidsSet dinosaurAdventureDesk = new KidsSet("SET002", "Dinosaur Adventure Desk", 499.99, "Dinosaur Adventure", 250.0);
+    
+    //Testing KidsSet methods
+    System.out.println(fairyTaleCastleBed.setName + " price: $" + fairyTaleCastleBed.getPrice()); //displays Fairy Tale Castle price using getPrice
+    dinosaurAdventureDesk.showPrice(); //displays Dinosaur Adventure set price using showPrice
+    System.out.println(fairyTaleCastleBed.furName + " price: $" + fairyTaleCastleBed.getFurniturePrice()); //displays fairyTaleCastleBed price using getFurniturePrice
+    
+    //Testing mystery gift method
+    System.out.println("Mystery gift for " + fairyTaleCastleBed.setName + " set: " + fairyTaleCastleBed.mysteryGift());//expected gift is Luxury Office Chair  
+    System.out.println("Mystery gift for " + dinosaurAdventureDesk.setName + " set: " + dinosaurAdventureDesk.mysteryGift()); //expected gift is Desk Organizer Set
+    
+    //Testing special mystery gift method
+    System.out.println("Special mystery gift for " + fairyTaleCastleBed.setName + " set: " + fairyTaleCastleBed.specialMysteryGift());
+    System.out.println("Special mystery gift for " + dinosaurAdventureDesk.setName + " set: " + dinosaurAdventureDesk.specialMysteryGift());
 }
     
     // Main method to make the class executable
